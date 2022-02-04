@@ -66,4 +66,4 @@ properties:
     enum: ["Each"]
     description: Uses same name as Metrc UnitThcContentDoseUnitOfMeasureName
   coa:
-    $ref: ./content/CoA.yaml
+    $ref: ./Coa/_index.yaml
