@@ -1,0 +1,8 @@
+type: object
+properties:
+  cbd:
+    $ref: ./Unit.yaml
+  thc:
+    $ref: ./Unit.yaml
+additionalProperties:
+  $ref: ./Unit.yaml

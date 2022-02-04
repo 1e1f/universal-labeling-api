@@ -18,4 +18,4 @@ and/or vs-code
 `code --install-extension stoplight.spectral`
 
 ### To Lint
-spectral lint swagger.yaml
+npm run lint
