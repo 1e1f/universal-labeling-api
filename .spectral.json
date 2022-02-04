@@ -1,0 +1,11 @@
+{
+  "functions": ["csv-compatible-schema"],
+  "rules": {
+    "csv-compatible-schema": {
+      "given": "$.components.schemas",
+      "then": {
+        "function": "csv-compatible-schema"
+      }
+    }
+  }
+}

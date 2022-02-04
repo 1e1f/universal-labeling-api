@@ -4,7 +4,8 @@
   "description": "Universal API For Labeling",
   "main": "index.js",
   "scripts": {
-    "build": "swagger-cli bundle swagger.yaml -o prebuild/swagger.json && redoc-cli bundle -o build/index.html prebuild/swagger.json"
+    "build": "swagger-cli bundle swagger.yaml -o prebuild/swagger.json && redoc-cli bundle -o build/index.html prebuild/swagger.json",
+    "lint": "spectral lint swagger.yaml"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,9 @@
   "dependencies": {
     "redoc-cli": "^0.13.2",
     "swagger-cli": "^4.0.4"
+  },
+  "devDependencies": {
+    "@stoplight/spectral-core": "^1.9.0",
+    "@stoplight/spectral-functions": "^1.5.1"
   }
 }
