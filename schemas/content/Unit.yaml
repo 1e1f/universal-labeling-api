@@ -6,9 +6,7 @@ properties:
     type: number
     format: float
     example: .37
-    nullable: true
-    description: Uses same name as Metrc UnitCbdPercentage
-  content:
+  weight:
     type: object
     required:
       - value
@@ -16,19 +14,15 @@ properties:
       value:
         type: number
         format: float
-        nullable: true
-        description: maps to Metrc Unit[Name]Content
       unitOfMeasureName:
         type: string
-        nullable: true
-        enum: ["Each", "Mg"]
-        description: maps to Metrc Unit[Name]ContentUnitOfMeasureName
-      dose:
+  dose:
+    type: object
+    required:
+      - value
+    properties:
+      value:
+        type: number
+        format: float
+      unitOfMeasureName:
         type: string
-        nullable: true
-        description: maps to Metrc Unit[Name]ContentDose
-      doseUnitOfMeasureName:
-        type: string
-        nullable: true
-        enum: ["Each", "Mg"]
-        description: Uses same name as Metrc Unit[Name]ContentDoseUnitOfMeasureName

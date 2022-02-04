@@ -59,9 +59,9 @@ const parseProperties = (target, options, _stack, parent) => {
   return stack;
 };
 
-export default function (targetVal) {
-  if (targetVal.lint && targetVal.lint.csv) {
-    try {
+const flattenableSchema = (targetVal) => {
+  try {
+    if (targetVal.lint && targetVal.lint.csv) {
       const pairs = parseProperties(targetVal);
       const objToFlat = {};
       const flatToObj = {};
@@ -71,8 +71,15 @@ export default function (targetVal) {
       }
       console.log(objToFlat);
       console.log(flatToObj);
-    } catch (e) {
-      return [e];
+    } else if (targetVal.properties) {
+      for (const k of Object.keys(targetVal.properties)) {
+        flattenableSchema(targetVal.properties[k]);
+      }
     }
   }
+  catch (e) {
+    return [e];
+  }
 }
+
+export default flattenableSchema;
